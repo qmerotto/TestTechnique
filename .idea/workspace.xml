@@ -47,7 +47,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ShortSequenceTest.postInvalidSequenceTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="test_technique" />
@@ -55,8 +55,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShortSequenceTest.getSequenceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test_technique" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ShortSequenceTest" />
+      <option name="METHOD_NAME" value="getSequenceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShortSequenceTest.getValidSequenceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test_technique" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ShortSequenceTest" />
+      <option name="METHOD_NAME" value="getValidSequenceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShortSequenceTest.postInvalidSequenceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="test_technique" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ShortSequenceTest" />
+      <option name="METHOD_NAME" value="postInvalidSequenceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ShortSequenceTest.postInvalidSequenceTest" />
+        <item itemvalue="JUnit.ShortSequenceTest.getValidSequenceTest" />
+        <item itemvalue="JUnit.ShortSequenceTest.getSequenceTest" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
