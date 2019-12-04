@@ -74,10 +74,12 @@ public class MainVerticle extends AbstractVerticle {
 
         JsonObject body = routingContext.getBodyAsJson();
         //Check that the body is valid & that the sequence doesn't exist
-        if(ShortSequenceValidator.isValidBody(body)
-            && ShortSequenceValidator.canCreateSequence(body)){
+        // & that it doesn't overlap other sequences
+        if (ShortSequenceValidator.isValidBody(body)
+            && ShortSequenceValidator.canCreateSequence(body)) {
             ShortSequence sequence = ShortSequence.buildShortSequenceFromJson(body);
             ShortSequenceDao.putShortSequence(sequence);
+            response.setStatusCode(HttpStatus.CREATED);
         } else {
             response.setStatusCode(HttpStatus.BAD_REQUEST);
             jsonResponse.put("Error", "Invalid parameters");
@@ -88,8 +90,22 @@ public class MainVerticle extends AbstractVerticle {
     private void updateShortSequence(final RoutingContext routingContext){
 
     }
-    private void deleteShortSequenceById(final RoutingContext routingContext){
 
+    private void deleteShortSequenceById(final RoutingContext routingContext){
+        HttpServerResponse response = routingContext.response();
+        JsonObject jsonResponse = new JsonObject();
+
+        try {
+            Integer id = Integer.parseInt(routingContext.request().getParam(ID_PARAMETER));
+            ShortSequenceDao.deleteSequenceById(id);
+            response.setStatusCode(HttpStatus.ACCEPTED);
+        }catch(NumberFormatException e){
+            response.setStatusCode(HttpStatus.INTERNAL_ERROR);
+            jsonResponse.put("Error", "Invalid id");
+        }finally {
+            response.putHeader("content-type", "application/json")
+                    .end(Json.encodePrettily(jsonResponse));
+        }
     }
 
     private void getLongSequenceById(final RoutingContext routingContext){

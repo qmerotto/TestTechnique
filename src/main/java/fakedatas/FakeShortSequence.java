@@ -88,4 +88,8 @@ public class FakeShortSequence {
     public static void putFakeShortSequence(Integer id, ShortSequence sequence){
         FAKE_SHORT_SEQUENCE_MAP.put(id, sequence);
     }
+
+    public static void deleteFakeShortSequence(Integer id){
+        FAKE_SHORT_SEQUENCE_MAP.remove(id);
+    }
 }

@@ -16,4 +16,7 @@ public class ShortSequenceDao {
     public static void putShortSequence(ShortSequence sequence){
         FakeShortSequence.putFakeShortSequence(sequence.getId(), sequence);
     }
+    public static void deleteSequenceById(Integer id){
+        FakeShortSequence.deleteFakeShortSequence(id);
+    }
 }

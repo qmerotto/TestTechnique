@@ -37,7 +37,7 @@ public class ShortSequence extends AbstractSequence {
         sequence.setUploadToCloud(body.getBoolean(UPLOAD_TO_CLOUD, true));
         sequence.setImageFormat(body.getString(IMAGE_FORMAT, "jpeg"));
         sequence.setKeepLocalCopy(body.getBoolean(KEEP_LOCAL_COPY, false));
-        sequence.setSequenceId(new BigInteger(body.getString(SEQUENCE_ID)));
+        sequence.setSequenceId(new BigInteger(Long.toString(body.getLong(SEQUENCE_ID))));
         sequence.setShootingStatus(body.getString(SHOOTING_STATUS, ""));
         sequence.setNbImagesOnSd(body.getInteger(NB_IMG_ON_SD, 0));
         sequence.setNbImagesUploaded(body.getInteger(NB_IMG_UPLOADED, 0));
